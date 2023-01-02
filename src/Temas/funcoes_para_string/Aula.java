@@ -5,7 +5,7 @@ package Temas.funcoes_para_string;
 // trim() = elimina os espaços nos cantos da String
 // substring() = recebe um valor no "()" e informa a partir de qual characterer em diante irá exibir
 // replace() = troca um valor por outro. No caso abaixo, troca 'a' por 'x'.
-
+// index of = verifica em qual posição está a String informada. Exemplos abaixo.
 public class Aula {
     public static void main(String[] args) {
 
@@ -22,6 +22,11 @@ public class Aula {
         String s06 = original.replace('a', 'x');
         String s07 = original.replace("abc", "xy");
 
+        // encontrar a primeira ocorrência do bc e a última ocorrência do bc
+        int i = original.indexOf("bc");
+        int j = original.lastIndexOf("bc");
+
+
         // Imprimindo valores
 
         System.out.println("Original: -" + original + " -");
@@ -32,5 +37,7 @@ public class Aula {
         System.out.println("substring(2, 9): -" + s05 + "-");
         System.out.println("replace('a', 'x'): -" + s06 + "-");
         System.out.println("replace('abc', 'xy'): -" + s07 + "-");
+        System.out.println("Index of 'bc': " + i);
+        System.out.println("LastIndex of 'bc': " + j);
     }
 }
