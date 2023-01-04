@@ -27,7 +27,7 @@ public class Aula {
 
         // Testar valor de bit
 
-        // O número 32 tem o 6 bit como 1 e os outros como 0.
+        // O número 32 tem o 6º bit como 1 e os outros como 0.
         // Se o número digitado tiver o 6 bit(de trás para frente) como 1, então será true, senão false.
         // Na calculadora, trocando a visualização de Padrão para Programador, você consegue visualizar um número
         // no valor binário
