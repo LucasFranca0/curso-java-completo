@@ -1,6 +1,6 @@
-package Temas.poo.construtor;
+package Temas.poo.construtor_encapsulamento;
 
-import Temas.poo.construtor.entities.Product;
+import Temas.poo.construtor_encapsulamento.entities.Product;
 
 import java.util.Locale;
 import java.util.Scanner;

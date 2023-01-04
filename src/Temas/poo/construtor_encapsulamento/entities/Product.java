@@ -1,4 +1,4 @@
-package Temas.poo.construtor.entities;
+package Temas.poo.construtor_encapsulamento.entities;
 
 // Construtor //
 //• É uma operação especial da classe, que executa no momento da
@@ -14,10 +14,12 @@ package Temas.poo.construtor.entities;
 
 public class Product {
 
-    // Atributos
-    public String name;
-    public double price;
-    public int quantity;
+    // Atributos e Encapsulamento
+    // private, para o atributo não ser alterado e visível para o usuário
+    // para alterar o atributo será necessário inserir os métodos Getters and Setters
+    private String name;
+    private double price;
+    private int quantity;
 
     // Construtor
     // Passa como parametros argumentos e o construtor irá inserir os parametros recebidos
@@ -63,6 +65,29 @@ public class Product {
                 + String.format("%.2f", price)
                 + ", " + quantity + " units, Total: $"
                 + String.format("%.2f",totalValueInStock());
+    }
+
+    // Getters and Setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    // Consultar a quantidade. Não foi feito o Setter, já que ele só poderá ser alterado
+    // quando houver uma entrada ou saída e não diretamente pelo método Set.
+    public int getQuantity() {
+        return quantity;
     }
 
 }
