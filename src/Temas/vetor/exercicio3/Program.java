@@ -48,6 +48,7 @@ public class Program {
         }
 
         double porcentagem_menores = ((double) menores / vect.length) * 100;
+        //outra forma de calcular porcentagem  porcentagem_menores = menores * 100.0 / vect.length;
         mediaAltura = soma / vect.length;
 
         System.out.print("\nAltura média: " + String.format("%.2f", mediaAltura) + "\n");
@@ -59,6 +60,8 @@ public class Program {
                 System.out.println(vect[i].getNome());
             }
         }
+
+        scan.close();
 
     }
 }
