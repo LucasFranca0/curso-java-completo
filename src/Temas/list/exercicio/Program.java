@@ -48,25 +48,33 @@ public class Program {
             double salary = scan.nextDouble();
 
             employee.add(new Employee(id, name, salary));
-
+            /*
+            Também funciona dessa forma
+            Employee emp = new Employee(id, name, salary);
+            list.add(emp);
+             */
         }
 
         System.out.println();
         System.out.print("Enter the employee id that will have salary increase: ");
         int id = scan.nextInt();
 
-        // Buscar pelo id na lista
-        Employee emp = employee.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+        // Buscar a posição que está o id digitado
+        Integer position = position(employee, id);
+
+        // Buscar pelo id na lista com predicado para uma expressão lambda
+       // Employee emp = employee.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
 
         // Verificar se o id existe e incrementa o salário com base na porcentagem
-        if (emp == null) {
+        if (position == null) {
             System.out.println("This id does not exist!");
         } else {
             System.out.println("Enter the percentage: ");
-            Double percentage = scan.nextDouble();
-            emp.increaseSalary(percentage);
+            double percentage = scan.nextDouble();
+            employee.get(position).increaseSalary(percentage);
         }
 
+        System.out.println();
         // Listar os elementos do List
         System.out.println("List of employees:");
         for (Employee employess : employee) {
@@ -78,5 +86,16 @@ public class Program {
     public static boolean hasId(List<Employee> list, int id) {
         Employee emp = list.stream().filter(x -> x.getId() == id).findFirst().orElse(null); // irá procurar pelo id e se não encontrar irá retornar 'null'
         return emp != null; // vai comparar o valor de emp para verificar se é diferente de 'null', se for, então retorna true, pois então existe já um id cadastrado.
+    }
+
+    // Encontrar a posição do id e retornar a posição do id se encontrar. Ou null
+    public static Integer position(List<Employee> list, int id) {
+        for (int i = 0; i < list.size(); i++) {
+            Employee emp = list.get(i);
+            if (emp.getId() == id) {
+                return i;
+            }
+        }
+        return null;
     }
 }
