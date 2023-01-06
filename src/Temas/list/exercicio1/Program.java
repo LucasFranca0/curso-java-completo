@@ -66,6 +66,8 @@ public class Program {
         for (Student alunos : students) {
             System.out.println(alunos);
         }
+
+        scan.close();
     }
 
     // Verifica se o id já existe
