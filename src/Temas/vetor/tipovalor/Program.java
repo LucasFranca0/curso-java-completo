@@ -1,4 +1,4 @@
-package Temas.vetor;
+package Temas.vetor.tipovalor;
 
 import java.util.Locale;
 import java.util.Scanner;
