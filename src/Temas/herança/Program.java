@@ -48,5 +48,20 @@ public class Program {
         Account acc8 = new BusinessAccount(1003, "Bob", 1000.0, 500.0);
         acc8.withdraw(200.0);
         System.out.println(acc8.getBalance());
+
+        // Polimorfismo //
+        //é um recurso que permite que variáveis de um mesmo tipo mais genérico
+        // possam apontar para objetos de tipos específicos  diferentes, tendo
+        // assim comportamentos diferentes conforme cada tipo específico.
+
+        Account x = new Account(1020, "Alex", 1000.0);
+        // Upcasting = associação feita em tempo de execução
+        Account y = new SavingsAccount(1023,"Maria", 1000.0, 0.01);
+
+        x.withdraw(50.0);
+        y.withdraw(50.0);
+
+        System.out.println("Total X = " + x.getBalance());
+        System.out.println("Total Y = " + y.getBalance());
     }
 }
