@@ -1,4 +1,6 @@
-package Temas.tratamento_excecoes.exemplo1.entities;
+package Temas.tratamento_excecoes.exemplo2.model.entities;
+
+import Temas.tratamento_excecoes.exemplo2.model.exceptions.DomainException;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,7 +18,16 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(Integer roomNumber, Date checkIn, Date checkOut) {
+    // Lançando exceção no construtor e propagando uma exceção throws DomainException
+    // para exceção do tipo explicita inserir o "throws DomainException"
+    public Reservation(Integer roomNumber, Date checkIn, Date checkOut)  {
+        Date now = new Date();
+        if (!checkOut.after(checkIn)) {
+            throw new DomainException("Check-out date must be after check-in date");
+        }
+        if (checkIn.before(now)) {
+            throw new DomainException("Reservation dates must be future");
+        }
         this.roomNumber = roomNumber;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
@@ -27,18 +38,15 @@ public class Reservation {
         return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
 
-
-    public String updateDate(Date checkIn, Date checkOut) {
+    // Lançando exceção e propagando
+    public void updateDate(Date checkIn, Date checkOut)  {
         Date now = new Date();
         if (checkIn.before(now) || checkOut.before(now)) {
-            return "Error in reservation: Reservation dates for update must be future";
-        }
-        if (!checkOut.after(checkIn)) {
-            return "Error in reservation: Check-out date must be after check-in date";
+         //Instanciando uma exceção e passando uma mensagem
+            throw new DomainException("Reservation dates for update must be future");
         }
         this.checkIn = checkIn;
         this.checkOut = checkOut;
-        return  null;
     }
 
     @Override
