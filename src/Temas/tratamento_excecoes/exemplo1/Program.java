@@ -7,6 +7,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+// Solução ruim que retorna uma String no método da classe
 
 public class Program {
     public static void main(String[] args) throws ParseException {
