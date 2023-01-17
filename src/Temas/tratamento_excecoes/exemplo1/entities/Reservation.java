@@ -37,7 +37,7 @@ public class Reservation {
         }
         this.checkIn = checkIn;
         this.checkOut = checkOut;
-        return null;
+        return  null;
     }
 
     @Override

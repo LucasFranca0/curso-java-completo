@@ -42,7 +42,6 @@ public class Program {
             System.out.print("Check-out date (dd/MM/yyyy): ");
             checkOut = sdf.parse(scan.next());
 
-
             String error = reservation.updateDate(checkIn, checkOut);
 
             if (error != null) {
