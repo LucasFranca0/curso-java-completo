@@ -27,7 +27,6 @@ public class Reservation {
         return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
 
-
     public String updateDate(Date checkIn, Date checkOut) {
         Date now = new Date();
         if (checkIn.before(now) || checkOut.before(now)) {
