@@ -8,10 +8,9 @@ import java.time.Duration;
 public class RentalService {
     private Double pricePerHour;
     private Double pricePerDay;
+    private TaxService taxService;
 
-    private BrazilTaxService taxService;
-
-    public RentalService(Double pricePerHour, Double pricePerDay, BrazilTaxService taxService) {
+    public RentalService(Double pricePerHour, Double pricePerDay, TaxService taxService) {
         this.pricePerHour = pricePerHour;
         this.pricePerDay = pricePerDay;
         this.taxService = taxService;
