@@ -30,7 +30,7 @@ public class Program {
         try (BufferedReader br = new BufferedReader(new FileReader(sourceFile))) {
             String itemCsv = br.readLine();
             while (itemCsv != null) {
-                String[] fields = itemCsv.split(",");
+                String[] fields = itemCsv.split(", ");
                 String name = fields[0];
                 double price = Double.parseDouble(fields[1]);
                 int quantity = Integer.parseInt(fields[2]);
