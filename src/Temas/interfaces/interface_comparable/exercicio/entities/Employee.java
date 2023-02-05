@@ -1,6 +1,6 @@
 package Temas.interfaces.interface_comparable.exercicio.entities;
 
-public class Employee implements Comparable<Employee>{
+public class Employee implements Comparable<Employee> {
     private String name;
     private Double salary;
 
@@ -25,9 +25,9 @@ public class Employee implements Comparable<Employee>{
         this.salary = salary;
     }
 
-    // Interface comparable ser
+   
     @Override
     public int compareTo(Employee o) {
-        return -salary.compareTo(o.getSalary());
+        return -name.compareTo(o.getName());
     }
 }
