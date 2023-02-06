@@ -23,6 +23,9 @@ public class Program {
             for (Employee emp : list) {
                 System.out.println(emp.getName() + ", " + emp.getSalary());
             }
+           /* System.out.println("maria".compareTo("alex")); = 12
+            System.out.println("alex".compareTo("maria"));   = -12
+            System.out.println("lucas".compareTo("lucas"));  =   0*/
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
