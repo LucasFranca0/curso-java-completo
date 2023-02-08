@@ -25,6 +25,8 @@ public class Program {
         set.removeIf(x -> x.length() >= 3);
         set.removeIf(x -> x.charAt(0) == 'T');
 
+        // union
+
         System.out.println(set.contains("Notebook"));
         for (String p : set) {
             System.out.println(p);
